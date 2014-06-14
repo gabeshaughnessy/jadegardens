@@ -50,4 +50,111 @@ function jg_product_register() {
     register_post_type( 'product', $args  );
 
 }
+
+//set up taxonomies for products
+
+add_action( 'init', 'create_product_taxonomies', 0 );
+
+function create_product_taxonomies() {
+    
+    //Batch
+    $labels = array(
+        'name'              => _x( 'Batch', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Batch', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Batches' ),
+        'all_items'         => __( 'All Batches' ),
+        'edit_item'         => __( 'Edit Batch' ),
+        'update_item'       => __( 'Update Batch' ),
+        'add_new_item'      => __( 'Add New Batch' ),
+        'new_item_name'     => __( 'New Batch Name' ),
+        'menu_name'         => __( 'Batches' ),
+    );
+
+    $args = array(
+        'hierarchical'      => false,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+    );
+
+    register_taxonomy( 'batch', array( 'product' ), $args );
+
+     //Strain
+    $labels = array(
+        'name'              => _x( 'Strain', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Strain', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Strains' ),
+        'all_items'         => __( 'All Strains' ),
+        'edit_item'         => __( 'Edit Strain' ),
+        'update_item'       => __( 'Update Strain' ),
+        'add_new_item'      => __( 'Add New Strain' ),
+        'new_item_name'     => __( 'New Strain Name' ),
+        'menu_name'         => __( 'Strains' ),
+    );
+
+    $args = array(
+        'hierarchical'      => false,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+    );
+
+    register_taxonomy( 'strain', array( 'product' ), $args );
+   
+   //Product Type
+    $labels = array(
+        'name'              => _x( 'Product Type', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Product Type', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Product Types' ),
+        'all_items'         => __( 'All Product Types' ),
+        'parent_item'       => __( 'Parent Product Type' ),
+        'parent_item_colon' => __( 'Parent Product Type:' ),
+        'edit_item'         => __( 'Edit Product Type' ),
+        'update_item'       => __( 'Update Type' ),
+        'add_new_item'      => __( 'Add New Product Type' ),
+        'new_item_name'     => __( 'New Product Type Name' ),
+        'menu_name'         => __( 'Product Types' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array(  'hierarchical' => true ),
+    );
+
+    register_taxonomy( 'product-type', array( 'product' ), $args );
+ 
+    
+    //Product Usages 
+    $labels = array(
+        'name'              => _x( 'Product Usages', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Product Usage', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Usages' ),
+        'all_items'         => __( 'All Usages' ),
+        'parent_item'       => __( 'Parent Usage' ),
+        'parent_item_colon' => __( 'Parent Usage:' ),
+        'edit_item'         => __( 'Edit Usage' ),
+        'update_item'       => __( 'Update Usage' ),
+        'add_new_item'      => __( 'Add New Usage' ),
+        'new_item_name'     => __( 'New Usage Name' ),
+        'menu_name'         => __( 'Product Usages' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array(  'hierarchical' => true ),
+    );
+
+    register_taxonomy( 'usage', array( 'product' ), $args );
+
+}
 ?>
