@@ -11,6 +11,7 @@ wp-content/themes/twentyfourteen
 wp-content/advanced-cache.php
 wp-content/wp-cache-config.php
 sitemap.xml
+error_log
 *.log
 wp-content/cache/
 wp-content/backups/
