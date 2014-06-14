@@ -1,0 +1,49 @@
+/**
+ * Theme Name: Basis Child
+ * Theme URI: http://thethemefoundry.com/wordpress-themes/basis/
+ * Author: The Theme Foundry
+ * Author URI: http://thethemefoundry.com/
+ * Description: A professional business theme with flexible drag and drop layouts and stunning slideshows.
+ * Version: 1.0
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Tags: white, light, one-column, two-column, right-sidebar, responsive-width, custom-background, custom-menu, editor-style, featured-images, infinite-scroll, post-slider, theme-options, translation-ready, blog, business, craft, magazine, news, productivity, clean, conservative, contemporary, elegant, formal, minimal, modern, professional, simple
+ * Template: basis
+ * Text Domain: basis
+ */
+
+@import url( '../basis/style.css' );
+
+body {
+  font-family: 'PT Serif', serif;
+  color: #666;
+}
+
+blockquote cite {
+
+  font-family: 'PT Serif', serif;
+
+}
+
+.cycle-pager span {
+  font-family: 'PT Serif', serif;
+}
+
+button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"],
+.basis-button,
+.slide-button,
+.banner-button{
+	font-family: 'PT Serif', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	color: #555;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
+	color: #444;
+}
