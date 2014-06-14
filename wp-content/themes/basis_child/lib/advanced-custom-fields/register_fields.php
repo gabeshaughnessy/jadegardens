@@ -20,7 +20,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'post_type',
 					'operator' => '==',
-					'value' => 'post',
+					'value' => 'product',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -30,6 +30,7 @@ if(function_exists("register_field_group"))
 			'position' => 'normal',
 			'layout' => 'no_box',
 			'hide_on_screen' => array (
+				0 => 'the_content',
 			),
 		),
 		'menu_order' => 0,

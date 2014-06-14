@@ -3,6 +3,8 @@
  * @package Basis Child
  */
 
+$prefix = 'jg_';
+
 /* DEFINE ENVIRONMENT GLOBAL */
 $host = $_SERVER['HTTP_HOST'];
 if (stristr($host, 'com') == FALSE){
@@ -46,6 +48,8 @@ if (stristr($host, 'com') == FALSE){
     }
 /* END of ACF Activation */
 
+/* Include Custom Post Type Declarations */
+require_once('lib/custom-post-types/cpt-product.php');
 
 /* FONTS ________________________*?
 add_action('wp_head', 'google_fonts');
