@@ -31,6 +31,8 @@ if (stristr($host, 'com') == FALSE){
     include_once( 'lib/advanced-custom-fields/add-ons/acf-flexible-content/acf-flexible-content.php' );
     include_once( 'lib/advanced-custom-fields/add-ons/acf-options-page/acf-options-page.php' ); 
     include_once( 'lib/advanced-custom-fields/add-ons/acf-field-date-time-picker/acf-date_time_picker.php' ); 
+    include_once( 'lib/advanced-custom-fields/add-ons/acf-wordpress-wysiwyg-field/acf-wp_wysiwyg.php' ); 
+    include_once( 'lib/advanced-custom-fields/add-ons/acf-taxonomy-field.php' );
 
     if ( ACF_ENVIRONMENT != 'development' ) {
         // If this is staging or production

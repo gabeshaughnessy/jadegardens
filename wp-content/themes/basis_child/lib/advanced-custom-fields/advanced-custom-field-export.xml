@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-<!-- generator="WordPress/3.9.1" created="2014-06-14 16:44" -->
+<!-- generator="WordPress/3.9.1" created="2014-06-14 18:50" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.1/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>Jade Gardens</title>
 	<link>http://jadegardens</link>
 	<description>Just another WordPress site</description>
-	<pubDate>Sat, 14 Jun 2014 16:44:09 +0000</pubDate>
+	<pubDate>Sat, 14 Jun 2014 18:50:19 +0000</pubDate>
 	<language></language>
 	<wp:wxr_version>1.1</wp:wxr_version>
 	<wp:base_site_url>http://jadegardens</wp:base_site_url>
@@ -58,7 +58,7 @@
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_539c77f5b967a</wp:meta_key>
-			<wp:meta_value><![CDATA[a:11:{s:3:"key";s:19:"field_539c77f5b967a";s:5:"label";s:19:"Product Description";s:4:"name";s:22:"jg_product_description";s:4:"type";s:7:"wysiwyg";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:7:"toolbar";s:4:"full";s:12:"media_upload";s:3:"yes";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:0;}]]></wp:meta_value>
+			<wp:meta_value><![CDATA[a:12:{s:3:"key";s:19:"field_539c77f5b967a";s:5:"label";s:19:"Product Description";s:4:"name";s:22:"jg_product_description";s:4:"type";s:10:"wp_wysiwyg";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:5:"teeny";s:1:"0";s:13:"media_buttons";s:1:"1";s:3:"dfw";s:1:"1";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:1;}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>position</wp:meta_key>
@@ -66,11 +66,47 @@
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>layout</wp:meta_key>
-			<wp:meta_value><![CDATA[no_box]]></wp:meta_value>
+			<wp:meta_value><![CDATA[default]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>hide_on_screen</wp:meta_key>
 			<wp:meta_value><![CDATA[a:1:{i:0;s:11:"the_content";}]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key>field_539c87a65fc74</wp:meta_key>
+			<wp:meta_value><![CDATA[a:13:{s:3:"key";s:19:"field_539c87a65fc74";s:5:"label";s:5:"Batch";s:4:"name";s:16:"jg_product_batch";s:4:"type";s:8:"taxonomy";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:8:"taxonomy";s:5:"batch";s:10:"field_type";s:6:"select";s:10:"allow_null";s:1:"1";s:15:"load_save_terms";s:1:"1";s:13:"return_format";s:2:"id";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:3;}]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key>field_539c88125fc75</wp:meta_key>
+			<wp:meta_value><![CDATA[a:13:{s:3:"key";s:19:"field_539c88125fc75";s:5:"label";s:6:"Strain";s:4:"name";s:17:"jg_product_strain";s:4:"type";s:8:"taxonomy";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:8:"taxonomy";s:6:"strain";s:10:"field_type";s:12:"multi_select";s:10:"allow_null";s:1:"1";s:15:"load_save_terms";s:1:"1";s:13:"return_format";s:2:"id";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:4;}]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key>field_539c88445fc76</wp:meta_key>
+			<wp:meta_value><![CDATA[a:13:{s:3:"key";s:19:"field_539c88445fc76";s:5:"label";s:12:"Product Type";s:4:"name";s:15:"jg_product_type";s:4:"type";s:8:"taxonomy";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:8:"taxonomy";s:12:"product-type";s:10:"field_type";s:8:"checkbox";s:10:"allow_null";s:1:"1";s:15:"load_save_terms";s:1:"1";s:13:"return_format";s:2:"id";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:5;}]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key>field_539c886e5fc77</wp:meta_key>
+			<wp:meta_value><![CDATA[a:13:{s:3:"key";s:19:"field_539c886e5fc77";s:5:"label";s:14:"Product Usages";s:4:"name";s:17:"jg_product_usages";s:4:"type";s:8:"taxonomy";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:8:"taxonomy";s:5:"usage";s:10:"field_type";s:8:"checkbox";s:10:"allow_null";s:1:"1";s:15:"load_save_terms";s:1:"1";s:13:"return_format";s:2:"id";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:2:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:6;}]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key>field_539c88bd5fc78</wp:meta_key>
+			<wp:meta_value><![CDATA[a:10:{s:3:"key";s:19:"field_539c88bd5fc78";s:5:"label";s:18:"Product Attributes";s:4:"name";s:21:"jg_product_attributes";s:4:"type";s:16:"flexible_content";s:12:"instructions";s:193:"Add attributes for your products based on the type of product it is. Add additional attributes using the 'additional set' then choose a label and a value for each new attribute you want to add.";s:8:"required";s:1:"0";s:7:"layouts";a:3:{i:0;a:4:{s:5:"label";s:11:"Concentrate";s:4:"name";s:11:"concentrate";s:7:"display";s:3:"row";s:10:"sub_fields";a:5:{i:0;a:13:{s:3:"key";s:19:"field_539c893e5fc7a";s:5:"label";s:17:"Distillation Temp";s:4:"name";s:17:"distillation_temp";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:12:"column_width";s:0:"";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:8:"order_no";i:0;}i:1;a:9:{s:3:"key";s:19:"field_539c89bc5fc7c";s:5:"label";s:14:"Decarboxylated";s:4:"name";s:14:"decarboxylated";s:4:"type";s:10:"true_false";s:12:"instructions";s:0:"";s:12:"column_width";s:0:"";s:7:"message";s:0:"";s:13:"default_value";s:1:"0";s:8:"order_no";i:1;}i:2;a:13:{s:3:"key";s:19:"field_539c8a035fc7d";s:5:"label";s:10:"Feed Stock";s:4:"name";s:10:"feed_stock";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:12:"column_width";s:0:"";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:8:"order_no";i:2;}i:3;a:13:{s:3:"key";s:19:"field_539c8c635fc7e";s:5:"label";s:17:"Extraction Method";s:4:"name";s:17:"extraction_method";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:12:"column_width";s:0:"";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:8:"order_no";i:3;}i:4;a:13:{s:3:"key";s:19:"field_539c8c745fc7f";s:5:"label";s:7:"Solvent";s:4:"name";s:7:"solvent";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:12:"column_width";s:0:"";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:8:"order_no";i:4;}}}i:1;a:4:{s:5:"label";s:3:"Bud";s:4:"name";s:3:"bud";s:7:"display";s:3:"row";s:10:"sub_fields";a:6:{i:0;a:13:{s:3:"key";s:19:"field_539c8ca55fc81";s:5:"label";s:14:"Nutrients Used";s:4:"name";s:14:"nutrients_used";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:12:"column_width";s:0:"";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:8:"order_no";i:0;}i:1;a:13:{s:3:"key";s:19:"field_539c8cbc5fc82";s:5:"label";s:13:"Growing Media";s:4:"name";s:13:"growing_media";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:12:"column_width";s:0:"";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:8:"order_no";i:1;}i:2;a:13:{s:3:"key";s:19:"field_539c8cc55fc83";s:5:"label";s:11:"Flower Time";s:4:"name";s:11:"flower_time";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:12:"column_width";s:0:"";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:8:"order_no";i:2;}i:3;a:13:{s:3:"key";s:19:"field_539c8ccc5fc84";s:5:"label";s:11:"Lights Used";s:4:"name";s:11:"lights_used";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:12:"column_width";s:0:"";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:8:"order_no";i:3;}i:4;a:13:{s:3:"key";s:19:"field_539c8ce05fc85";s:5:"label";s:14:"Growing Method";s:4:"name";s:14:"growing_method";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:12:"column_width";s:0:"";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:8:"order_no";i:4;}i:5;a:13:{s:3:"key";s:19:"field_539c8cee5fc87";s:5:"label";s:5:"Flush";s:4:"name";s:5:"flush";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:12:"column_width";s:0:"";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:8:"order_no";i:5;}}}i:2;a:4:{s:5:"label";s:21:"Additional Attributes";s:4:"name";s:10:"additional";s:7:"display";s:3:"row";s:10:"sub_fields";a:1:{i:0;a:12:{s:3:"key";s:19:"field_539c8d655fc89";s:5:"label";s:21:"Additional Attributes";s:4:"name";s:21:"additional_attributes";s:4:"type";s:8:"repeater";s:12:"instructions";s:30:"Add additional attributes here";s:12:"column_width";s:0:"";s:10:"sub_fields";a:2:{i:0;a:13:{s:3:"key";s:19:"field_539c8d8c5fc8a";s:5:"label";s:15:"Attribute Label";s:4:"name";s:5:"label";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:12:"column_width";s:0:"";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"none";s:9:"maxlength";s:0:"";s:8:"order_no";i:0;}i:1;a:13:{s:3:"key";s:19:"field_539c8dcc5fc8b";s:5:"label";s:15:"Attribute Value";s:4:"name";s:5:"value";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:12:"column_width";s:0:"";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"none";s:9:"maxlength";s:0:"";s:8:"order_no";i:1;}}s:7:"row_min";s:1:"0";s:9:"row_limit";s:0:"";s:6:"layout";s:3:"row";s:12:"button_label";s:13:"Add Attribute";s:8:"order_no";i:0;}}}}s:12:"button_label";s:17:"Add Attribute Set";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:7;}]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key>field_539c8e8fac6cd</wp:meta_key>
+			<wp:meta_value><![CDATA[a:12:{s:3:"key";s:19:"field_539c8e8fac6cd";s:5:"label";s:15:"Product Effects";s:4:"name";s:18:"jg_product_effects";s:4:"type";s:8:"textarea";s:12:"instructions";s:45:"A short description of the product's effects.";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:9:"maxlength";s:0:"";s:10:"formatting";s:4:"html";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:2;}]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key>field_539c8ed4ac6ce</wp:meta_key>
+			<wp:meta_value><![CDATA[a:11:{s:3:"key";s:19:"field_539c8ed4ac6ce";s:5:"label";s:13:"Analysis Date";s:4:"name";s:16:"jg_analysis_date";s:4:"type";s:11:"date_picker";s:12:"instructions";s:46:"The analysis date for this product's lab test.";s:8:"required";s:1:"0";s:11:"date_format";s:6:"yymmdd";s:14:"display_format";s:8:"dd/mm/yy";s:9:"first_day";s:1:"1";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:8;}]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key>field_539c9025d834f</wp:meta_key>
+			<wp:meta_value><![CDATA[a:11:{s:3:"key";s:19:"field_539c9025d834f";s:5:"label";s:13:"Product Image";s:4:"name";s:13:"product_image";s:4:"type";s:5:"image";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:11:"save_format";s:6:"object";s:12:"preview_size";s:9:"thumbnail";s:7:"library";s:3:"all";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:0;}]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key>field_539c92c920ccd</wp:meta_key>
+			<wp:meta_value><![CDATA[a:13:{s:3:"key";s:19:"field_539c92c920ccd";s:5:"label";s:20:"Chemical Composition";s:4:"name";s:22:"jg_product_composition";s:4:"type";s:8:"repeater";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:10:"sub_fields";a:2:{i:0;a:13:{s:3:"key";s:19:"field_539c92d220cce";s:5:"label";s:8:"Chemical";s:4:"name";s:8:"chemical";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:12:"column_width";s:2:"50";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"none";s:9:"maxlength";s:0:"";s:8:"order_no";i:0;}i:1;a:14:{s:3:"key";s:19:"field_539c92eb20ccf";s:5:"label";s:6:"Amount";s:4:"name";s:6:"amount";s:4:"type";s:6:"number";s:12:"instructions";s:51:"The amount of the chemical present, in decimal form";s:12:"column_width";s:0:"";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:3:"min";s:1:"0";s:3:"max";s:1:"1";s:4:"step";s:0:"";s:8:"order_no";i:1;}}s:7:"row_min";s:1:"0";s:9:"row_limit";s:0:"";s:6:"layout";s:5:"table";s:12:"button_label";s:12:"Add Chemical";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:9;}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>rule</wp:meta_key>
