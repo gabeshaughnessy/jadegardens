@@ -3,6 +3,11 @@
 //Registers the shortcodes to produce charts from the product data
 
 // [chart data="jg_product_composition"]
+function randomColor(){
+	$num = mt_rand ( 0, 0xffffff ); // trust the library, love the library...
+	$output = sprintf ( "%06x" , $num ); // muchas smoochas to you, PHP!
+	return '#'.$output;
+}
 function chart_func( $atts ) {
     global $post;
 	$chart = '';
@@ -23,7 +28,7 @@ function chart_func( $atts ) {
    //Chart Javacript
 	$data = array();
 	$labels = array();
-	$colors = array('#D97041','#C7604C','#21323D','#9D9B7F','#7D4F6D','#584A5E');
+	$colors = array('#D97041','#C7604C','#21323D','#9D9B7F','#7D4F6D','#584A5E', randomColor(), randomColor(),randomColor(),randomColor(),randomColor(),randomColor(),randomColor(),randomColor(),randomColor(),randomColor(),randomColor());
 	
 	
 	foreach ($product_atts as $value) {
