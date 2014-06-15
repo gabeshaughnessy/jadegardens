@@ -5,53 +5,6 @@
 
 $prefix = 'jg_';
 
-/* DEFINE ENVIRONMENT GLOBAL */
-$host = $_SERVER['HTTP_HOST'];
-if (stristr($host, 'com') == FALSE){
-    define('ACF_ENVIRONMENT', "development");
-    }
-    elseif ((stristr($host, 'staging') !== FALSE)){
-        define('ACF_ENVIRONMENT', "staging");
-        }
-        else{
-            define('ACF_ENVIRONMENT', "production");
-            } 
-
-/* Advanced Custom Fields Activiation */
-/* ################################################################################# */
-
-    if (ACF_ENVIRONMENT != 'development') {
-       define('ACF_LITE', true);
-    }
-
-    /* Advanced Custome Fields */
-    require_once('lib/advanced-custom-fields/acf.php');
-    /* ACF Add-ons */
-    include_once( 'lib/advanced-custom-fields/add-ons/acf-repeater/acf-repeater.php' );
-    include_once( 'lib/advanced-custom-fields/add-ons/acf-flexible-content/acf-flexible-content.php' );
-    include_once( 'lib/advanced-custom-fields/add-ons/acf-options-page/acf-options-page.php' ); 
-    include_once( 'lib/advanced-custom-fields/add-ons/acf-field-date-time-picker/acf-date_time_picker.php' ); 
-    include_once( 'lib/advanced-custom-fields/add-ons/acf-wordpress-wysiwyg-field/acf-wp_wysiwyg.php' ); 
-    include_once( 'lib/advanced-custom-fields/add-ons/acf-taxonomy-field.php' );
-
-    if ( ACF_ENVIRONMENT != 'development' ) {
-        // If this is staging or production
-            // load ACF declarations
-            require_once('lib/advanced-custom-fields/register_fields.php'); 
-        }
-        else{            
-            add_action( 'admin_menu', 'ACF_acf_menu', 9 );
-            function ACF_acf_menu(){
-                add_submenu_page( 'edit.php?post_type=acf', __('Custom Fields','acf'), __('Custom Fields','acf'), 'manage_options', 'edit.php?post_type=acf');
-                add_submenu_page( 'edit.php?post_type=acf', __('Import ACF','acf'), __('Import ACF','acf'), 'manage_options', 'admin.php?import=wordpress');
-
-                }
-
-    }
-/* END of ACF Activation */
-
-/* Include Custom Post Type Declarations */
-require_once('lib/custom-post-types/cpt-product.php');
 
 /* FONTS ________________________*?
 add_action('wp_head', 'google_fonts');

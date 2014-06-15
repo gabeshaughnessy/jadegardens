@@ -34,18 +34,6 @@ class acf_flexible_content_plugin
 		);
 		
 		
-		// create remote update
-		if( is_admin() )
-		{
-			if( !class_exists('acf_remote_update') )
-			{
-				include_once('acf-remote-update.php');
-			}
-			
-			new acf_remote_update( $settings );
-		}
-		
-		
 		// actions
 		add_action('acf/register_fields', array($this, 'register_fields'));
 

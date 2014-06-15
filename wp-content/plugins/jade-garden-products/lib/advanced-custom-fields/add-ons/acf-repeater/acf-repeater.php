@@ -34,16 +34,7 @@ class acf_repeater_plugin
 		);
 		
 		
-		// create remote update
-		if( is_admin() )
-		{
-			if( !class_exists('acf_remote_update') )
-			{
-				include_once('acf-remote-update.php');
-			}
-			
-			new acf_remote_update( $settings );
-		}
+	
 		
 		
 		// actions
