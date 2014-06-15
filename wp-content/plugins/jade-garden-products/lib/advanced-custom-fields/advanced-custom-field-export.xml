@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-<!-- generator="WordPress/3.9.1" created="2014-06-15 00:17" -->
+<!-- generator="WordPress/3.9.1" created="2014-06-15 21:20" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.1/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>Jade Gardens</title>
 	<link>http://jadegardens</link>
 	<description>Just another WordPress site</description>
-	<pubDate>Sun, 15 Jun 2014 00:17:12 +0000</pubDate>
+	<pubDate>Sun, 15 Jun 2014 21:20:39 +0000</pubDate>
 	<language></language>
 	<wp:wxr_version>1.1</wp:wxr_version>
 	<wp:base_site_url>http://jadegardens</wp:base_site_url>
@@ -86,7 +86,7 @@
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_539c886e5fc77</wp:meta_key>
-			<wp:meta_value><![CDATA[a:13:{s:3:"key";s:19:"field_539c886e5fc77";s:5:"label";s:14:"Product Usages";s:4:"name";s:17:"jg_product_usages";s:4:"type";s:8:"taxonomy";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:8:"taxonomy";s:5:"usage";s:10:"field_type";s:8:"checkbox";s:10:"allow_null";s:1:"1";s:15:"load_save_terms";s:1:"1";s:13:"return_format";s:2:"id";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:2:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:6;}]]></wp:meta_value>
+			<wp:meta_value><![CDATA[a:13:{s:3:"key";s:19:"field_539c886e5fc77";s:5:"label";s:14:"Product Usages";s:4:"name";s:17:"jg_product_usages";s:4:"type";s:8:"taxonomy";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:8:"taxonomy";s:5:"usage";s:10:"field_type";s:8:"checkbox";s:10:"allow_null";s:1:"1";s:15:"load_save_terms";s:1:"1";s:13:"return_format";s:2:"id";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:6;}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_539c88bd5fc78</wp:meta_key>
@@ -102,7 +102,7 @@
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_539c9025d834f</wp:meta_key>
-			<wp:meta_value><![CDATA[a:11:{s:3:"key";s:19:"field_539c9025d834f";s:5:"label";s:13:"Product Image";s:4:"name";s:13:"product_image";s:4:"type";s:5:"image";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:11:"save_format";s:6:"object";s:12:"preview_size";s:9:"thumbnail";s:7:"library";s:3:"all";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:0;}]]></wp:meta_value>
+			<wp:meta_value><![CDATA[a:13:{s:3:"key";s:19:"field_539c9025d834f";s:5:"label";s:14:"Product Images";s:4:"name";s:14:"product_images";s:4:"type";s:8:"repeater";s:12:"instructions";s:61:"Upload multiple images to create a gallery for this product. ";s:8:"required";s:1:"0";s:10:"sub_fields";a:1:{i:0;a:10:{s:3:"key";s:19:"field_539e0da12cd8c";s:5:"label";s:13:"Gallery Image";s:4:"name";s:13:"gallery_image";s:4:"type";s:5:"image";s:12:"instructions";s:0:"";s:12:"column_width";s:0:"";s:11:"save_format";s:6:"object";s:12:"preview_size";s:9:"thumbnail";s:7:"library";s:3:"all";s:8:"order_no";i:0;}}s:7:"row_min";s:1:"0";s:9:"row_limit";s:0:"";s:6:"layout";s:3:"row";s:12:"button_label";s:9:"Add Image";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:2:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:0;}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_539c92c920ccd</wp:meta_key>

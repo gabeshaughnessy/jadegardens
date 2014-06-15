@@ -31,12 +31,26 @@ if(function_exists("register_field_group"))
 		'fields' => array (
 			array (
 				'key' => 'field_539c9025d834f',
-				'label' => 'Product Image',
-				'name' => 'product_image',
-				'type' => 'image',
-				'save_format' => 'object',
-				'preview_size' => 'thumbnail',
-				'library' => 'all',
+				'label' => 'Product Images',
+				'name' => 'product_images',
+				'type' => 'repeater',
+				'instructions' => 'Upload multiple images to create a gallery for this product. ',
+				'sub_fields' => array (
+					array (
+						'key' => 'field_539e0da12cd8c',
+						'label' => 'Gallery Image',
+						'name' => 'gallery_image',
+						'type' => 'image',
+						'column_width' => '',
+						'save_format' => 'object',
+						'preview_size' => 'thumbnail',
+						'library' => 'all',
+					),
+				),
+				'row_min' => 0,
+				'row_limit' => '',
+				'layout' => 'row',
+				'button_label' => 'Add Image',
 			),
 			array (
 				'key' => 'field_539c77f5b967a',
