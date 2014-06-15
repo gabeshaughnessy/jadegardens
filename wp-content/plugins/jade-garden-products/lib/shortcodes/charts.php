@@ -43,7 +43,13 @@ function chart_func( $atts ) {
 			value : '.$value.',
 			color: "'.$colors[$i].'",
 		},';
-		$i++;
+		if($i <= count($colors)){
+			$i++;
+		}
+		else{
+			//reset the colors
+			$i = 0;
+		}
 	}
 	$chart .= '];';
    
@@ -60,7 +66,13 @@ function chart_func( $atts ) {
    $i = 0;
 	foreach ($labels as $value) {
 		$chart .= '<p><div style="display: inline-block; float: left; margin-right: 4px; background:'.$colors[$i].'; width:20px; height:20px;"></div>'.$value.'</p>';
-		$i++;
+		if($i <= count($colors)){
+			$i++;
+		}
+		else{
+			//reset the colors
+			$i = 0;
+		}
 	}
   // $chart .= '<pre>'.print_r($labels, true).'</pre>';
 
