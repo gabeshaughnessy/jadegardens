@@ -12,7 +12,6 @@ function jg_product_register() {
     // CPT Label
     $singular_name = 'Product';
     $plural_name = 'Products';
-
     // arguments
     $args = array(
         'public' => true,
@@ -20,6 +19,7 @@ function jg_product_register() {
         'query_var' => true,
         'has_archive' => true,
         'show_ui' => true,
+        'menu_icon' => ACF__PLUGIN_DIR.'/images/product_icon.svg',
         'show_in_admin_bar' => true,
         'hierarchical' => true, //supports wp_list_pages
         'supports' => array(

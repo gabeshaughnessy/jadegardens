@@ -58,23 +58,24 @@ if (stristr($host, 'com') == FALSE){
     }
 
     /* Advanced Custome Fields */
-    define( 'ACF__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-    require_once(ACF__PLUGIN_DIR.'lib/advanced-custom-fields/acf.php');
+    define( 'ACF__PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+    define( 'ACF__PLUGIN_DIR', plugin_dir_url( __FILE__ ) );
+    require_once(ACF__PLUGIN_PATH.'lib/advanced-custom-fields/acf.php');
    
     /* ACF Add-ons */
   
 
-        include_once( ACF__PLUGIN_DIR.'lib/advanced-custom-fields/add-ons/acf-repeater/acf-repeater.php' );
-        include_once( ACF__PLUGIN_DIR.'lib/advanced-custom-fields/add-ons/acf-flexible-content/acf-flexible-content.php' );
-        include_once( ACF__PLUGIN_DIR.'lib/advanced-custom-fields/add-ons/acf-options-page/acf-options-page.php' ); 
-        include_once( ACF__PLUGIN_DIR.'lib/advanced-custom-fields/add-ons/acf-field-date-time-picker/acf-date_time_picker.php' ); 
-        include_once( ACF__PLUGIN_DIR.'lib/advanced-custom-fields/add-ons/acf-wordpress-wysiwyg-field/acf-wp_wysiwyg.php' ); 
-        include_once( ACF__PLUGIN_DIR.'lib/advanced-custom-fields/add-ons/acf-taxonomy-field.php' );
+        include_once( ACF__PLUGIN_PATH.'lib/advanced-custom-fields/add-ons/acf-repeater/acf-repeater.php' );
+        include_once( ACF__PLUGIN_PATH.'lib/advanced-custom-fields/add-ons/acf-flexible-content/acf-flexible-content.php' );
+        include_once( ACF__PLUGIN_PATH.'lib/advanced-custom-fields/add-ons/acf-options-page/acf-options-page.php' ); 
+        include_once( ACF__PLUGIN_PATH.'lib/advanced-custom-fields/add-ons/acf-field-date-time-picker/acf-date_time_picker.php' ); 
+        include_once( ACF__PLUGIN_PATH.'lib/advanced-custom-fields/add-ons/acf-wordpress-wysiwyg-field/acf-wp_wysiwyg.php' ); 
+        include_once( ACF__PLUGIN_PATH.'lib/advanced-custom-fields/add-ons/acf-taxonomy-field.php' );
 
     if ( ACF_ENVIRONMENT != 'development' ) {
         // If this is staging or production
             // load ACF declarations
-            require_once(ACF__PLUGIN_DIR.'lib/advanced-custom-fields/register_fields.php'); 
+            require_once(ACF__PLUGIN_PATH.'lib/advanced-custom-fields/register_fields.php'); 
         }
         else{            
             add_action( 'admin_menu', 'ACF_acf_menu', 9 );
@@ -88,5 +89,5 @@ if (stristr($host, 'com') == FALSE){
 /* END of ACF Activation */
 
 /* Include Custom Post Type Declarations */
-require_once(ACF__PLUGIN_DIR.'lib/custom-post-types/cpt-product.php');
+require_once(ACF__PLUGIN_PATH.'lib/custom-post-types/cpt-product.php');
 ?>

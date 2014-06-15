@@ -2,16 +2,25 @@
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
-		'id' => 'acf_options-page',
-		'title' => 'options page',
+		'id' => 'acf_batch-settings',
+		'title' => 'Batch Settings',
 		'fields' => array (
+			array (
+				'key' => 'field_539e143b4f991',
+				'label' => 'Analysis Date',
+				'name' => 'jg_analysis_date',
+				'type' => 'date_picker',
+				'date_format' => 'yymmdd',
+				'display_format' => 'dd/mm/yy',
+				'first_day' => 1,
+			),
 		),
 		'location' => array (
 			array (
 				array (
-					'param' => 'options_page',
+					'param' => 'ef_taxonomy',
 					'operator' => '==',
-					'value' => 'acf-options',
+					'value' => 'batch',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -398,6 +407,90 @@ if(function_exists("register_field_group"))
 			'layout' => 'default',
 			'hide_on_screen' => array (
 				0 => 'the_content',
+			),
+		),
+		'menu_order' => 0,
+	));
+	register_field_group(array (
+		'id' => 'acf_site-options',
+		'title' => 'Site Options',
+		'fields' => array (
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'options_page',
+					'operator' => '==',
+					'value' => 'acf-options',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+	register_field_group(array (
+		'id' => 'acf_taxonomy-fields',
+		'title' => 'Taxonomy Fields',
+		'fields' => array (
+			array (
+				'key' => 'field_539e15e3826e5',
+				'label' => 'Image',
+				'name' => 'jg_tax_image',
+				'type' => 'image',
+				'save_format' => 'object',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'ef_taxonomy',
+					'operator' => '==',
+					'value' => 'product-type',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+			array (
+				array (
+					'param' => 'ef_taxonomy',
+					'operator' => '==',
+					'value' => 'strain',
+					'order_no' => 0,
+					'group_no' => 1,
+				),
+			),
+			array (
+				array (
+					'param' => 'ef_taxonomy',
+					'operator' => '==',
+					'value' => 'usage',
+					'order_no' => 0,
+					'group_no' => 2,
+				),
+			),
+			array (
+				array (
+					'param' => 'ef_taxonomy',
+					'operator' => '==',
+					'value' => 'batch',
+					'order_no' => 0,
+					'group_no' => 3,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
 			),
 		),
 		'menu_order' => 0,
