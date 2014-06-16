@@ -21,7 +21,7 @@ function chart_func( $atts ) {
    $product_atts = get_field($a['field'], $a['id']);
 
 	//Chart Markup
-   $chart .= '<canvas id="myChart" width="400" height="400"></canvas>';
+   $chart .= '<canvas id="myChart" width="400" height="400" style="float:left; margin-right: 20px;"></canvas>';
 
 	
    $chart .= '<script type="text/javascript">';
@@ -73,7 +73,7 @@ function chart_func( $atts ) {
    $chart .= '</script>';
    $i = 0;
 	foreach ($labels as $value) {
-		$chart .= '<p><div style="display: inline-block; float: left; margin-right: 4px; background:'.$colors[$i].'; width:20px; height:20px;"></div>'.$value.'</p>';
+		$chart .= '<div class="chart-key"  style="float: left; display: block; width: 50%;" ><p><div style="display: inline-block; float: left; margin-right: 4px; background:'.$colors[$i].'; width:20px; height:20px;"></div>'.$value.'</p></div>';
 		if($i <= count($colors)){
 			$i++;
 		}
