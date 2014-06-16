@@ -97,6 +97,7 @@ require_once(ACF__PLUGIN_PATH.'lib/shortcodes/charts.php');
 
 //ENQUEUE JAVASCRIPT AND STYLES
 function jg_product_scripts(){
+    error_log(plugins_url( 'lib/js/chart.min .js' , __FILE__ ));
     wp_enqueue_script('chart', plugins_url( 'lib/js/chart.min.js' , __FILE__ ), array('jquery'));
 }
 add_action( 'wp_enqueue_scripts', 'jg_product_scripts' );
