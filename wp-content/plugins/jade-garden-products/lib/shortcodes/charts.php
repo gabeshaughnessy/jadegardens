@@ -61,7 +61,10 @@ function chart_func( $atts ) {
 
    //Get the context of the canvas element we want to select
    $chart .= 'var ctx = document.getElementById("myChart").getContext("2d");';
-   $chart .= 'var myNewChart = new Chart(ctx).PolarArea(data);';
+   $chart .= '
+   jQuery(document).ready(function(){
+   	var myNewChart = new Chart(ctx).PolarArea(data);
+   });';
 
 	
    //Instantiate the chart
