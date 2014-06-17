@@ -57,29 +57,6 @@ add_action( 'init', 'create_product_taxonomies', 0 );
 
 function create_product_taxonomies() {
     
-    //Batch
-    $labels = array(
-        'name'              => _x( 'Batch', 'taxonomy general name' ),
-        'singular_name'     => _x( 'Batch', 'taxonomy singular name' ),
-        'search_items'      => __( 'Search Batches' ),
-        'all_items'         => __( 'All Batches' ),
-        'edit_item'         => __( 'Edit Batch' ),
-        'update_item'       => __( 'Update Batch' ),
-        'add_new_item'      => __( 'Add New Batch' ),
-        'new_item_name'     => __( 'New Batch Name' ),
-        'menu_name'         => __( 'Batches' ),
-    );
-
-    $args = array(
-        'hierarchical'      => false,
-        'labels'            => $labels,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'query_var'         => true,
-    );
-
-    register_taxonomy( 'batch', array( 'product' ), $args );
-
      //Strain
     $labels = array(
         'name'              => _x( 'Strain', 'taxonomy general name' ),
@@ -91,6 +68,9 @@ function create_product_taxonomies() {
         'add_new_item'      => __( 'Add New Strain' ),
         'new_item_name'     => __( 'New Strain Name' ),
         'menu_name'         => __( 'Strains' ),
+        'add_or_remove_items' => __( 'Add or remove strains' ),
+        'choose_from_most_used' => __( 'Choose from the most used strains' ),
+        'separate_items_with_commas' => __('Separate strains with commas')
     );
 
     $args = array(
