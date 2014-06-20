@@ -3,111 +3,178 @@
 //Registers the shortcodes to produce charts from the product data
 
 // [chart data="jg_product_composition"]
-function randomColor(){
-	$num = mt_rand ( 0, 0xffffff ); // trust the library, love the library...
-	$output = sprintf ( "%06x" , $num ); // muchas smoochas to you, PHP!
-	return '#'.$output;
-}
+
 function chart_func( $atts ) {
-    global $post;
-	$chart = '';
-    $a = shortcode_atts( array(
-    	'id' => $post->ID,
-        'field' => 'jg_product_composition',
-        'width' => '600',
-        'height' => '400'
-    ), $atts );
+    global $post, $chart_id;
+   if( !isset($chart_id) ){
+		$chart_id = 0;
+	}
+	else{
+		$chart_id++;
+	}
+		$chart = '';
+	    $a = shortcode_atts( array(
+	    	'id' => $post->ID,
+	    	'other' => false,
+	        'field' => 'jg_batch',
+	        'width' => '600',
+	        'height' => '400',
+	        'textcolor' => '#EEE',
+	        'fontsize' => '10',
+	        'colorset' => ''
+	        
+	    ), $atts );
 
-	
+	if(!empty($a['field'])){
 
-   $product_atts = get_field($a['field'], $a['id']);
+	   $product_atts = get_field($a['field'], $a['id']);
+		}
+		else {
+			exit;
+		}
+		//Chart Markup
+	 
+	   $chart .= '<canvas id="myChart'.$chart_id.'" width="'.$a['width'].'" height="'.$a['height'].'" style="float:left; margin-right: 20px;"></canvas>';
 
-	//Chart Markup
-   $chart .= '<canvas id="myChart" width="'.$a['width'].'" height="'.$a['height'].'" style="float:left; margin-right: 20px;"></canvas>';
-
-	
-   $chart .= '<script type="text/javascript">';
-   //Chart Javacript
-	$data = array();
-	$labels = array();
-	$colors = array('#D97041','#C7604C','#21323D','#9D9B7F','#7D4F6D','#584A5E', randomColor(), randomColor(),randomColor(),randomColor(),randomColor(),randomColor(),randomColor(),randomColor(),randomColor(),randomColor(),randomColor());
-	
-	
-	foreach ($product_atts as $value) {
-		foreach($value as $key => $value){
-			if($key == 'amount'){
-				$data[] = $value;
+		$chart .= '<style type="text/css">';
+		$chart .= '
+			.annotation {
+				z-index: 999;
+				color: #fff;
+				text-shadow : 0 1px 1px rgba(0,0,0,.5);
+				font-family: monospace, serif;
 			}
-			elseif ($key == 'chemical') {
-				$labels[] = $value;
-			}	
+		';
+		$chart.= '</style>';
+	   $chart .= '<script type="text/javascript">';
+	   //Chart Javacript
+		$data = array();
+		$labels = array();
+		
+		
+
+		
+		if($a['colorset'] == 'green'){
+			$colorset = array('#297F51','#9FFFCB','#53FFA2','#507F66','#42CC82','#617F38', '#E3FFBC', '#C2FF70', '#697856', '#9BCC59');
 		}
-	}
-	$chart .= 'var data = [';
-	$i = 0;
-	$leftover = 100;
-	foreach ($data as $value) {
-		$chart .= '{
-			value : '.$value.',
-			color: "'.$colors[$i].'",
-			title: "'.$labels[$i].' : '.$value.'%"
-		},';
-		if($i <= count($colors)){
+		elseif ($a['colorset'] == 'yellow') {
+			$colorset = array('#7F7F10', '#FFFF6C', '#FFFE1F', '#5f5f00', '#CCCB19', '#7F6605', '#FFDC57', '#FFCC0B', '#786726', '#CCA309');
+		}
+		elseif ($a['colorset'] == 'teal') {
+			$colorset = array('#287F71', '#9CFFEE', '#50FFE1', '#477870', '#40CCB4', '#1F6F7F', '#8AECFF', '#3DDFFF', '#3E6E78', '#31B2CC');
+		}
+		elseif ($a['colorset'] == 'red') {
+			$colorset = array('#7F1401', '#FF694F', '#FF2803', '#782F22', '#CC2002',  '#7F0035', '#FF4C97', '#FF006B', '#782145', '#CC0055');
+		}
+		elseif ($a['colorset'] == 'grey') {
+			$colorset = array('#111', '#444', '#222', '#555', '#333',  '#777', '#999', '#666', '#bbb', '#888',  '#aaa',  '#ccc', '#ddd', '#eee');
+		}
+		$i = 0;
+				
+
+		foreach ($product_atts as $value) {
+
+			if($value['test_results']){
+				foreach($value['test_results'] as $item){
+
+						$data[] = $item['amount'];
+						$labels[] = $item['chemical'];	
+
+						if(isset($a['colorset']) && $colorset != ''){
+							$colors[] = $colorset[$i];
+
+							
+						}
+						elseif (isset($item['color'])&& !empty($item['color'])){
+							$colors[] = $item['color'];		
+						}
+						else{
+							$colors = $a['colorset'];
+						}
+
+						$i++;
+
+				}
+				
+			}
 			$i++;
+			//add a color for 'other'
+			if($a['other'] != false){
+							$colors[] = $colorset[$i];
+						}		
 		}
-		else{
-			//reset the colors
-			$i = 0;
+
+		$chart .= 'var data'.$chart_id.' = [';
+		$i = 0;
+		$leftover = 100;
+		foreach ($data as $value) {
+
+			$chart .= '{
+				value : '.$value.',
+				color: "'.$colors[$i].'",
+				title: "'.$labels[$i].' : '.$value.'%"
+			},';
+			if($i <= count($colors)){
+				$i++;
+			}
+			else{
+				//reset the colors
+				$i = 0;
+			}
+			$leftover = $leftover - $value;
+			
+
 		}
-		$leftover = $leftover - $value;
 
-	}
-	if($leftover > 0){
-		$chart .= '{
-			value : '.$leftover.',
-			color: "'.$colors[$i].'",
-			title: "Other : '.$leftover.'%"
-		},';
-	}
-	$chart .= '];';
-   
-   //Configure chart options 
-   $chart .= 'var options = { 
-		inGraphDataShow : true, 
-		inGraphDataAnglePosition : 2,
-		inGraphDataRadiusPosition: 3,
-		inGraphDataPaddingRadius : 15,
-		inGraphDataRotate : "inRadiusAxisRotateLabels",
-		inGraphDataFontSize : 10,
-		inGraphDataAlign : "off-center",
-		inGraphDataVAlign : "top",
-		graitleSpaceAfter : 40,
-		footNoteSpaceBefore : 40,
-		inGraphDataTmpl: "<%=v1%>",
-		radiusScale : .8,
-		segmentShowStroke : false,
-		annotateDisplay : true,
-		annotateLabel : "<%=v1%>",
-		legend: true,
-		legendBorders : false
-		} ; ';
-   //Get the context of the canvas element we want to select
-   $chart .= 'var ctx = document.getElementById("myChart").getContext("2d");';
-   $chart .= '
-   jQuery(document).ready(function(){
-   	var myNewChart = new Chart(ctx).Pie(data, options);
-   });';
+		if($leftover > 0 && $a['other'] != false){
+			$chart .= '{
+				value : '.$leftover.',
+				color: "'.$colors[$i].'", //fix this!
+				title: "other : '.$leftover.'%"
+			},';
+		}
+		
+		$chart .= '];';
+	   
+	   //Configure chart options 
 
-	
-   //Instantiate the chart
-   //$chart .= 'new Chart(ctx).PolarArea(data);';
+	   $chart .= 'var options'.$chart_id.' = { 
+			inGraphDataShow : false, 
+			inGraphDataAnglePosition : 2,
+			inGraphDataRadiusPosition: 3,
+			inGraphDataPaddingRadius : 15,
+			annotateClassName : "annotation",
+			inGraphDataRotate : "inRadiusAxisRotateLabels",
+			inGraphDataFontSize : '.$a['fontsize'].',
+			inGraphDataFontColor : "'.$a['textcolor'].'",
+			inGraphDataAlign : "off-center",
+			inGraphDataVAlign : "top",
+			graitleSpaceAfter : 40,
+			footNoteSpaceBefore : 40,
+			inGraphDataTmpl: "<%=v1%>",
+			radiusScale : .8,
+			segmentShowStroke : false,
+			annotateDisplay : true,
+			annotateLabel : "<%=v1%>",
+			legend: true,
+			legendBorders : false,
+			legendFontColor : "'.$a['textcolor'].'",
 
-   $chart .= '</script>';
-   
-  // $chart .= '<pre>'.print_r($labels, true).'</pre>';
+			} ; ';
+	   //Get the context of the canvas element we want to select
+	   $chart .= 'var ctx'.$chart_id.' = document.getElementById("myChart'.$chart_id.'").getContext("2d");';
+	   $chart .= '
+	   jQuery(document).ready(function(){
+	   	var myNewChart'.$chart_id.' = new Chart(ctx'.$chart_id.').Pie(data'.$chart_id.', options'.$chart_id.');
+	   });';
 
-   return $chart;
+		
+	   //Instantiate the chart
+	   //$chart .= 'new Chart(ctx).PolarArea(data);';
 
+	   $chart .= '</script>';
+
+	   return $chart;
 
 }
 add_shortcode( 'chart', 'chart_func' );
