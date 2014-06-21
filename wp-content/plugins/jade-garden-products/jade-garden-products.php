@@ -68,10 +68,39 @@ require_once(JG_PLUGIN_PATH.'lib/custom-post-types/cpt-product.php');
 //REGISTER SHORTCODES
 /* Include Custom Post Type Declarations */
 require_once(JG_PLUGIN_PATH.'lib/shortcodes/charts.php');
+require_once(JG_PLUGIN_PATH.'lib/shortcodes/product-profile.php');
+require_once(JG_PLUGIN_PATH.'lib/shortcodes/product-gallery.php');
+require_once(JG_PLUGIN_PATH.'lib/shortcodes/product-batches.php');
+require_once(JG_PLUGIN_PATH.'lib/shortcodes/product-uses.php');
+require_once(JG_PLUGIN_PATH.'lib/shortcodes/product-description.php');
+require_once(JG_PLUGIN_PATH.'lib/shortcodes/product-effects.php');
 
 //ENQUEUE JAVASCRIPT AND STYLES
 function jg_product_scripts(){
+    wp_enqueue_script('modernizr', plugins_url( 'lib/bower_components/foundation/js/vendor/modernizr.js' , __FILE__ ), array('jquery'));
+    wp_enqueue_script('fast-click', plugins_url( 'lib/bower_components/foundation/js/vendor/fastclick.js' , __FILE__ ), array('jquery'));
+    wp_enqueue_script('foundation', plugins_url( 'lib/bower_components/foundation/js/foundation.min.js' , __FILE__ ), array('jquery', 'modernizr'));
+    wp_enqueue_script('jquery-ui', plugins_url( 'lib//js/jquery-ui.min.js' , __FILE__ ), array('jquery'));
     wp_enqueue_script('chart', plugins_url( 'lib/js/ChartNew.js' , __FILE__ ), array('jquery'));
+    wp_enqueue_style('app', plugins_url( 'lib/css/app.css' , __FILE__ ));
 }
+
 add_action( 'wp_enqueue_scripts', 'jg_product_scripts' );
+function activate_javascripts(){
+    echo '<script type="text/javascript">';
+        echo 'jQuery(".tabset").tabs()';
+    echo '</script>';
+}
+add_action('wp_footer', 'activate_javascripts');
+
+
+//Image size for product galleries 
+add_image_size('block-thumb-1', 1200, 1200, true);
+add_image_size('block-thumb-2', 600, 600, true);
+add_image_size('block-thumb-3', 400, 400, true);
+add_image_size('block-thumb-4', 300, 300, true);
+add_image_size('block-thumb-5', 240, 240, true);
+add_image_size('block-thumb-6', 200, 200, true);
+
+
 ?>

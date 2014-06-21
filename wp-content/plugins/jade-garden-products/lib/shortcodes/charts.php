@@ -20,27 +20,27 @@ function chart_func( $atts ) {
 	        'width' => '600',
 	        'height' => '400',
 	        'textcolor' => '#EEE',
+	        'annotatecolor' => '#000',
 	        'fontsize' => '10',
-	        'colorset' => ''
+	        'colorset' => '',
+	        'batch' => ''
 	        
 	    ), $atts );
 
-	if(!empty($a['field'])){
 
-	   $product_atts = get_field($a['field'], $a['id']);
-		}
-		else {
-			exit;
-		}
+
+	   $product_atts = get_field('jg_batch', $a['id']);
+
+
 		//Chart Markup
-	 
+	$chart .= '<div class="jg-wrapper">';
 	   $chart .= '<canvas id="myChart'.$chart_id.'" width="'.$a['width'].'" height="'.$a['height'].'" style="float:left; margin-right: 20px;"></canvas>';
 
 		$chart .= '<style type="text/css">';
 		$chart .= '
 			.annotation {
 				z-index: 999;
-				color: #fff;
+				color: 	'.$a['annotatecolor'].';
 				text-shadow : 0 1px 1px rgba(0,0,0,.5);
 				font-family: monospace, serif;
 			}
@@ -69,11 +69,24 @@ function chart_func( $atts ) {
 		elseif ($a['colorset'] == 'grey') {
 			$colorset = array('#111', '#444', '#222', '#555', '#333',  '#777', '#999', '#666', '#bbb', '#888',  '#aaa',  '#ccc', '#ddd', '#eee');
 		}
+		else {
+			$colorset = array('#111', '#444', '#222', '#555', '#333',  '#777', '#999', '#666', '#bbb', '#888',  '#aaa',  '#ccc', '#ddd', '#eee');
+		}
 		$i = 0;
-				
+			
 
+		if($a['batch'] == '') {
+			$batch = $product_atts[0];
+			$batch = $batch['batch_id'];
+			$batch = $batch->name;
+		}	
+		else {
+			$batch = $a['batch'];
+		}
 		foreach ($product_atts as $value) {
-
+		
+			if($batch == $value['batch_id']->name){
+						
 			if($value['test_results']){
 				foreach($value['test_results'] as $item){
 
@@ -95,6 +108,7 @@ function chart_func( $atts ) {
 						$i++;
 
 				}
+			}
 				
 			}
 			$i++;
@@ -173,6 +187,7 @@ function chart_func( $atts ) {
 	   //$chart .= 'new Chart(ctx).PolarArea(data);';
 
 	   $chart .= '</script>';
+	   $chart .='</div>';
 
 	   return $chart;
 

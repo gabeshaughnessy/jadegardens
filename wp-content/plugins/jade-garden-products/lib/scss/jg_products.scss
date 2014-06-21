@@ -1,0 +1,20 @@
+dl.attribute-list{
+	
+	dt{
+			font-weight: 800;
+			float: left;
+			min-width: 30%;
+			@media screen and (max-width: 768px){
+				min-width: 100%;
+			}
+			&:after{
+				font-weight: inherit;
+				content:":";
+				margin-right: 1em;
+			}
+	}
+
+	dd{
+		min-width: 70%;
+	}
+}
