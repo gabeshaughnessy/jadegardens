@@ -69,6 +69,7 @@ require_once(JG_PLUGIN_PATH.'lib/custom-post-types/cpt-product.php');
 /* Include Custom Post Type Declarations */
 require_once(JG_PLUGIN_PATH.'lib/shortcodes/charts.php');
 require_once(JG_PLUGIN_PATH.'lib/shortcodes/product-profile.php');
+require_once(JG_PLUGIN_PATH.'lib/shortcodes/product-archive.php');
 require_once(JG_PLUGIN_PATH.'lib/shortcodes/product-gallery.php');
 require_once(JG_PLUGIN_PATH.'lib/shortcodes/product-batches.php');
 require_once(JG_PLUGIN_PATH.'lib/shortcodes/product-uses.php');
@@ -102,5 +103,18 @@ add_image_size('block-thumb-4', 300, 300, true);
 add_image_size('block-thumb-5', 240, 240, true);
 add_image_size('block-thumb-6', 200, 200, true);
 
+/*//add content to single templates
 
+function jg_product_content(){
+    $content = do_shortcode('[product-profile]');
+       return $content;
+}
+function jg_custom_content(){  
+    if(get_post_type() == 'product'){
+        add_filter('the_content', 'jg_product_content');
+    }  
+}
+
+
+add_action('wp_head', 'jg_custom_content');*/
 ?>

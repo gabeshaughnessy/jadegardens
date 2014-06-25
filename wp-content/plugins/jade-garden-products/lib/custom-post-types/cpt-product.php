@@ -18,6 +18,7 @@ function jg_product_register() {
         'publicly_queryable' => true,
         'query_var' => true,
         'has_archive' => true,
+        'name' => $singular_name,
         'show_ui' => true,
         'menu_icon' => JG_PLUGIN_DIR.'/images/product_icon.svg',
         'show_in_admin_bar' => true,
@@ -29,7 +30,7 @@ function jg_product_register() {
             'revisions'
         ),
         'rewrite' => array(
-            //'slug' => __('products')
+            'slug' => __('products')
         ),
         'labels' => array(
             'name' => $singular_name,
@@ -40,6 +41,7 @@ function jg_product_register() {
             'edit_item' => 'Edit ' . $singular_name,
             'new_item' => 'New ' . $singular_name,
             'view_item' => 'View ' . $singular_name,
+            'name_admin_bar' => $singular_name,
             'search_items' => 'Search ' . $plural_name,
             'not_found' => 'No ' . $plural_name . ' Found',
             'not_found_in_trash' => 'No ' . $plural_name . ' Found In Trash',
