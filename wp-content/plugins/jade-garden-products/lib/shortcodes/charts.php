@@ -23,7 +23,9 @@ function chart_func( $atts ) {
 	        'annotatecolor' => '#000',
 	        'fontsize' => '10',
 	        'colorset' => '',
-	        'batch' => ''
+	        'batch' => '',
+	        'showlegend' => true,
+	        'link' => ''
 	        
 	    ), $atts );
 
@@ -34,8 +36,9 @@ function chart_func( $atts ) {
 
 		//Chart Markup
 	$chart .= '<div class="jg-wrapper">';
-	   $chart .= '<canvas id="myChart'.$chart_id.'" width="'.$a['width'].'" height="'.$a['height'].'" style="float:left; margin-right: 20px;"></canvas>';
-
+		$chart .= ($a['link'] != '' ? '<a href="'.get_permalink($a['id']).'" title="Learn More">' : '');
+		   $chart .= '<canvas id="chart'.$chart_id.'" width="'.$a['width'].'" height="'.$a['height'].'" style="float:left; margin-right: 20px;"></canvas>';
+		$chart .= ($a['link'] != '' ? '</a>' : '');
 		$chart .= '<style type="text/css">';
 		$chart .= '
 			.annotation {
@@ -170,13 +173,13 @@ function chart_func( $atts ) {
 			segmentShowStroke : false,
 			annotateDisplay : true,
 			annotateLabel : "<%=v1%>",
-			legend: true,
+			legend: '.$a['showlegend'].',
 			legendBorders : false,
 			legendFontColor : "'.$a['textcolor'].'",
 
 			} ; ';
 	   //Get the context of the canvas element we want to select
-	   $chart .= 'var ctx'.$chart_id.' = document.getElementById("myChart'.$chart_id.'").getContext("2d");';
+	   $chart .= 'var ctx'.$chart_id.' = document.getElementById("chart'.$chart_id.'").getContext("2d");';
 	   $chart .= '
 	   jQuery(document).ready(function(){
 	   	var myNewChart'.$chart_id.' = new Chart(ctx'.$chart_id.').Pie(data'.$chart_id.', options'.$chart_id.');

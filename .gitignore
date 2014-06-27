@@ -3,6 +3,7 @@ wp-admin/
 wp-includes/
 wp-content/uploads/
 wp-content/plugins/akismet
+wp-content/plugins/wordpress-seo
 wp-content/blogs.dir/
 wp-content/upgrade/
 wp-content/backup-db/

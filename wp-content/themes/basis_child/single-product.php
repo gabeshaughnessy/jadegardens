@@ -6,9 +6,14 @@
 
 <?php get_header(); ?>
 
+<?php if ( function_exists('yoast_breadcrumb') ) {
+	yoast_breadcrumb('<div class="breadcrumbs-wrapper"><p id="breadcrumbs">','</p></div>');
+}
+
+ ?>
+
 <?php while ( have_posts() ) : ?>
 	<?php the_post(); ?>
-	
 	<div class="post-content main">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div class="entry product basis-list">

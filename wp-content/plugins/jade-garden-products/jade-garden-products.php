@@ -75,6 +75,7 @@ require_once(JG_PLUGIN_PATH.'lib/shortcodes/product-batches.php');
 require_once(JG_PLUGIN_PATH.'lib/shortcodes/product-uses.php');
 require_once(JG_PLUGIN_PATH.'lib/shortcodes/product-description.php');
 require_once(JG_PLUGIN_PATH.'lib/shortcodes/product-effects.php');
+require_once(JG_PLUGIN_PATH.'lib/shortcodes/taxonomy-list.php');
 
 //ENQUEUE JAVASCRIPT AND STYLES
 function jg_product_scripts(){

@@ -2,8 +2,9 @@
 function product_gallery_shortcode($atts){
 	global $post;
 	$gallery = '';
-	$gallery_meta= shortcode_atts(array(
+	$gallery_meta = shortcode_atts(array(
 		'id' => $post->ID,
+		'style' => ''
 		), $atts);
 	
 	$product_images = get_field('jg_product_images',  $gallery_meta['id']);
@@ -32,7 +33,7 @@ function product_gallery_shortcode($atts){
 		$gallery .= '<div class="product-gallery"><ul class = "large-block-grid-'.$grid.'">';
 		foreach ($product_images as $image) {
 		//$gallery .='<pre>'.print_r($image, true).'</pre>';
-			$gallery .= '<li><img src="'.$image['gallery_image']['sizes']['block-thumb-'.$grid].'" alt="" width="'.$image['gallery_image']['sizes']['block-thumb-'.$grid.'-width'].'" height="'.$image['gallery_image']['sizes']['block-thumb-'.$grid.'-height'].'" /></li>';
+			$gallery .= '<li><div class="'.($gallery_meta['style'] == 'round' ? 'round-' : '').'image-wrapper"><img src="'.$image['gallery_image']['sizes']['block-thumb-'.$grid].'" alt="" width="'.$image['gallery_image']['sizes']['block-thumb-'.$grid.'-width'].'" height="'.$image['gallery_image']['sizes']['block-thumb-'.$grid.'-height'].'" /></div></li>';
 		}
 		$gallery .= '</ul></div>';
 

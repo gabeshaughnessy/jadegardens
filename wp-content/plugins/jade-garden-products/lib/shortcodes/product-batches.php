@@ -7,9 +7,10 @@ function product_batches_shortcode($atts){
 		), $atts);
 	
 	$batches = get_field('jg_batch',$batch_meta['id']);
-
+	
+	$i = 0;
+	if(count($batches) > 1):
 	$return .= '<div class="tabset jg-wrapper"><ul class="tabs" >';
-			$i = 0;
 				foreach ($batches as $batch) {
 					$batch_id = '';
 					$batch_id = $batch['batch_id'];
@@ -28,6 +29,15 @@ function product_batches_shortcode($atts){
 				}
 			$return .= '</ul>';
 			$i = 0;
+		elseif(count($batches) == 1) :
+			$batch_id = '';
+			$batch_id = $batches[0]['batch_id'];
+			if(!empty($batch_id)){
+				$batch_id = $batch_id->name;
+
+			}
+			$return = '<h6>Batch #'.$batch_id.'</h6>';
+		endif;
 				foreach ($batches as $batch) {
 
 
@@ -44,7 +54,7 @@ function product_batches_shortcode($atts){
 
 
 					$return .='<div class="content '.($i == 0 ? 'active ' : '').'" id="batch'.$batch_id.'">';
-					$return .='<h5>'.get_the_title($batch_meta['id']).' Batch '.$batch_id.' </h5>';
+					$return .='<h5>'.get_the_title($batch_meta['id']).'</h5>';
 					$return .= '<p class="date"><em>'.date('F jS, Y', $batch_date).'</em></p>';
 					$return .= '<div class="large-4 columns">';
 					$return .= do_shortcode('[chart batch='.$batch_id.' id='.$batch_meta['id'].' width=280px height=280px textcolor=#333 annotatecolor=#333 colorset=green]');

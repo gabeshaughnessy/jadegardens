@@ -24,7 +24,7 @@ function product_profile_func( $profile_atts ) {
 		$product .='<div class="row">';
 
 			//gallery
-			$product .= do_shortcode('[product-gallery id='.$product_meta['id'].']');
+			$product .= do_shortcode('[product-gallery id='.$product_meta['id'].' style="round"]');
 			
 			//description
 			$product .= do_shortcode('[product-description id='.$product_meta['id'].']');

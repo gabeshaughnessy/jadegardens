@@ -5,8 +5,16 @@
 ?>
 
 <?php get_header(); 
-global $post;
 
+if ( function_exists('yoast_breadcrumb') ) {
+	yoast_breadcrumb('<div class="breadcrumbs-wrapper"><p id="breadcrumbs">','</p></div>');
+}
+
+global $post;
+$style= 'round';
+if(isset($_REQUEST['style'])) :
+	$style = $_REQUEST['style'];
+endif;
 ?>
 
 <div class="post-content">
@@ -25,7 +33,18 @@ global $post;
 		?></h1>
 	</header>
 	<div class="entry">
-		<?php echo do_shortcode('[product-archive]'); ?>
+		<?php echo do_shortcode('[product-archive style="'.$style.'" ] '); ?>
+		<hr />
+		<?php 
+		if(!is_tax('strain')) :
+		 echo	'<h4>Strains</h4>'. do_shortcode('[taxonomy-list taxonomy=strain]'); 
+		  endif; 
+		if(!is_tax('usage')) :
+			 echo	'<h4>Browse by Medicinal Uses</h4>'.do_shortcode('[taxonomy-list taxonomy=usage]');
+		endif; ?>
+		
+		<h4>Products Types</h4>
+		<?php echo do_shortcode('[taxonomy-list]'); ?>
 	</div>
 </div>
 

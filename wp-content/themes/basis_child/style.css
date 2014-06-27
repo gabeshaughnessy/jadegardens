@@ -25,6 +25,14 @@ blockquote cite {
 
 }
 
+.breadcrumbs-wrapper{
+  max-width: 940px;
+  clear: both;
+  margin: 0 auto;
+  padding: 0px 60px;
+  padding: 0 3.75rem;
+  font-size: .8rem;
+}
 .cycle-pager span {
   font-family: 'PT Serif', serif;
 }
