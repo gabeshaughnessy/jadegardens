@@ -15,7 +15,7 @@ Stylesheets are compiled from sass with grunt.
 
 #### Getting started with grunt
 After you have [installed grunt](http://gruntjs.com/installing-grunt),  cd into the plugin directory, then do `npm install` - this will install the necessary packages.
-After you do that, just do `grunt` from within the plugins directory.
+After you do that, just do `grunt` from within the [Jade Garden Products plugin directory](https://github.com/gabeshaughnessy/jadegardens/tree/master/wp-content/plugins/jade-garden-products/).
 
 #### Using Advanced Custom Fields to add Post Meta Fields.
 The child theme and plugin rely on [Advanced Custom Fields](http://www.advancedcustomfields.com/resources/) to create and manage post metadata and it has been configured following the instructions [here](http://www.advancedcustomfields.com/resources/including-acf-in-a-plugin-theme/).
