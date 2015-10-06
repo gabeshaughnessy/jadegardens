@@ -1,7 +1,7 @@
 ## The Jade Garden Site
 
 ### Getting started
-you can find a fresh copy of the db in [/db](https://github.com/gabeshaughnessy/jadegardens/tree/master/db) and also the core site files in /get_started.zip
+you can find a fresh copy of the db in [/db](https://github.com/gabeshaughnessy/jadegardens/tree/master/db) and also the core site files in [/get_started.zip](https://github.com/gabeshaughnessy/jadegardens/blob/master/get_started.zip)
 
 To create a working local copy of the site, install WordPress, create a local DB and import the data, update local-config.php with your site url and db name.
 
