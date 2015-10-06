@@ -36,7 +36,7 @@ function product_batches_shortcode($atts){
 				$batch_id = $batch_id->name;
 
 			}
-			$return = '<h6>Batch #'.$batch_id.'</h6>';
+			$return .= '<h6>Batch #'.$batch_id.'</h6>';
 		endif;
 				foreach ($batches as $batch) {
 
@@ -46,7 +46,6 @@ function product_batches_shortcode($atts){
 					$batch_id = $batch['batch_id'];
 					if(!empty($batch_id)){
 						$batch_id = $batch_id->name;
-						
 					}
 					$batch_date = strtotime($batch['analysis_date']);
 					$batch_results = $batch['test_results'];
@@ -54,9 +53,11 @@ function product_batches_shortcode($atts){
 
 
 					$return .='<div class="content '.($i == 0 ? 'active ' : '').'" id="batch'.$batch_id.'">';
+					$return .='<div class="batch-meta">';
 					$return .='<h5>'.get_the_title($batch_meta['id']).'</h5>';
 					$return .= '<p class="date"><em>'.date('F jS, Y', $batch_date).'</em></p>';
-					$return .= '<div class="large-4 columns">';
+					$return .='</div>';
+					$return .= '<div class="row"><div class="large-4 columns">';
 					$return .= do_shortcode('[chart batch='.$batch_id.' id='.$batch_meta['id'].' width=280px height=280px textcolor=#333 annotatecolor=#333 colorset=green]');
 					$return .= '</div>';
 					$return .= '<div class="large-8 columns">';
@@ -80,12 +81,12 @@ function product_batches_shortcode($atts){
 							}
 						}
 						$return .='</dl>';
-						$return .= '</div>';
+						$return .= '</div></div>';
 						$return .='</div>';//close tab
-						$i++;
+						
 					
 					}
-					
+					$i++;
 				}
 			$return .= '</div>'; //end of tabset
 			

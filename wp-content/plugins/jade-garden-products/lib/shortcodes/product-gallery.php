@@ -30,7 +30,7 @@ function product_gallery_shortcode($atts){
 			$grid = 2;
 		}
 			
-		$gallery .= '<div class="product-gallery"><ul class = "large-block-grid-'.$grid.'">';
+		$gallery .= '<div class="product-gallery"><ul class = "large-block-grid-'.$grid.' small-block-grid-2" >';
 		foreach ($product_images as $image) {
 		//$gallery .='<pre>'.print_r($image, true).'</pre>';
 			$gallery .= '<li><div class="'.($gallery_meta['style'] == 'round' ? 'round-' : '').'image-wrapper"><img src="'.$image['gallery_image']['sizes']['block-thumb-'.$grid].'" alt="" width="'.$image['gallery_image']['sizes']['block-thumb-'.$grid.'-width'].'" height="'.$image['gallery_image']['sizes']['block-thumb-'.$grid.'-height'].'" /></div></li>';
